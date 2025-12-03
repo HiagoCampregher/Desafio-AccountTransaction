@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Api", "PagueVeloz.Api.csproj", "{FF71B0C0-5C2C-4B1E-F7D6-4BC3F71F0D58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Domain", "..\PagueVeloz.Domain\PagueVeloz.Domain.csproj", "{D8116B6F-8380-DB1C-6B7D-5799F0BE3BD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Application", "..\PagueVeloz.Application\PagueVeloz.Application.csproj", "{809AACCD-F5F8-432B-61C5-2774D367BA83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Infrastructure", "..\PagueVeloz.Infrastructure\PagueVeloz.Infrastructure.csproj", "{ACFD57BE-5475-96EF-D46D-8271D0E1B2DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Tests", "..\PagueVeloz.Tests\PagueVeloz.Tests.csproj", "{F47FFB62-51EE-20B4-C50D-37CAA0F73C13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF71B0C0-5C2C-4B1E-F7D6-4BC3F71F0D58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF71B0C0-5C2C-4B1E-F7D6-4BC3F71F0D58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF71B0C0-5C2C-4B1E-F7D6-4BC3F71F0D58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF71B0C0-5C2C-4B1E-F7D6-4BC3F71F0D58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8116B6F-8380-DB1C-6B7D-5799F0BE3BD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8116B6F-8380-DB1C-6B7D-5799F0BE3BD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8116B6F-8380-DB1C-6B7D-5799F0BE3BD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8116B6F-8380-DB1C-6B7D-5799F0BE3BD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809AACCD-F5F8-432B-61C5-2774D367BA83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809AACCD-F5F8-432B-61C5-2774D367BA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809AACCD-F5F8-432B-61C5-2774D367BA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809AACCD-F5F8-432B-61C5-2774D367BA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFD57BE-5475-96EF-D46D-8271D0E1B2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFD57BE-5475-96EF-D46D-8271D0E1B2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFD57BE-5475-96EF-D46D-8271D0E1B2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFD57BE-5475-96EF-D46D-8271D0E1B2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F47FFB62-51EE-20B4-C50D-37CAA0F73C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F47FFB62-51EE-20B4-C50D-37CAA0F73C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F47FFB62-51EE-20B4-C50D-37CAA0F73C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F47FFB62-51EE-20B4-C50D-37CAA0F73C13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {363E401D-94CD-4AE8-AA79-D642226404B9}
+	EndGlobalSection
+EndGlobal
