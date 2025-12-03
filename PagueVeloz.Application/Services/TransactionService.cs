@@ -9,11 +9,6 @@ using InvalidOperationException = PagueVeloz.Domain.Exceptions.InvalidOperationE
 
 namespace PagueVeloz.Application.Services;
 
-public interface ITransactionService
-{
-    Task<CreateTransactionResponse> ProcessTransactionAsync(CreateTransactionRequest request, CancellationToken ct);
-}
-
 public class TransactionService : ITransactionService
 {
     private readonly IAccountRepository _accountRepository;
@@ -21,34 +16,25 @@ public class TransactionService : ITransactionService
     private readonly IUnitOfWork _unitOfWork;
     private readonly AsyncRetryPolicy _retryPolicy;
 
-    public TransactionService(
-        IAccountRepository accountRepository,
-        ITransactionRepository transactionRepository,
-        IUnitOfWork unitOfWork)
+    public TransactionService(IAccountRepository accountRepository, ITransactionRepository transactionRepository, IUnitOfWork unitOfWork)
     {
         _accountRepository = accountRepository;
         _transactionRepository = transactionRepository;
         _unitOfWork = unitOfWork;
 
-        // Configuração do Retry conforme requisito de "Resiliência" [cite: 66, 129]
-        // Se der erro de Concorrência (Lock Otimista), tenta 3 vezes esperando 
-        // exponencialmente (ex: 20ms, 40ms, 80ms)
-        _retryPolicy = Policy
-            .Handle<Exception>(ex => ex.Message.Contains("Conflito de concorrência"))
+        _retryPolicy = Policy.Handle<Exception>(ex => ex.Message.Contains("Concorrência entre requisições - Tentativa de retry"))
             .WaitAndRetryAsync(3, retryAttempt => TimeSpan.FromMilliseconds(20 * Math.Pow(2, retryAttempt)));
     }
 
     public async Task<CreateTransactionResponse> ProcessTransactionAsync(CreateTransactionRequest request, CancellationToken ct)
     {
-        // 1. Idempotência: Verifica se já processamos essa transação 
         if (await _transactionRepository.ExistsByReferenceIdAsync(request.ReferenceId, ct))
         {
             throw new InvalidOperationException($"Transação duplicada detectada: {request.ReferenceId}");
         }
 
-        // Criamos a entidade de transação (Auditoria)
         var transaction = new Transaction(
-            Guid.Empty, // Será preenchido ao carregar a conta
+            Guid.Empty,
             Enum.Parse<OperationTypeTransaction>(request.Operation, true),
             request.Amount,
             request.Currency,
@@ -60,11 +46,8 @@ public class TransactionService : ITransactionService
 
         try
         {
-            // O código dentro do ExecuteAsync será retentado se der conflito de concorrência
             await _retryPolicy.ExecuteAsync(async () =>
             {
-                // 2. Carrega a conta
-                // Nota: Buscamos pelo AccountNumber (string) que vem no JSON
                 account = await _accountRepository.GetByAccountNumberAsync(request.AccountId, ct)
                           ?? throw new InvalidOperationException("Conta não encontrada.");
 

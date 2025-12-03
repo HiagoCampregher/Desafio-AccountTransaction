@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Application", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Api", "PagueVeloz.Api\PagueVeloz.Api.csproj", "{04803121-C02C-4899-8829-3EF15DE1C9B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagueVeloz.Tests", "PagueVeloz.Tests\PagueVeloz.Tests.csproj", "{CCF73978-C954-4543-B825-31A9BE91767D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{04803121-C02C-4899-8829-3EF15DE1C9B3}.Release|x64.Build.0 = Release|Any CPU
 		{04803121-C02C-4899-8829-3EF15DE1C9B3}.Release|x86.ActiveCfg = Release|Any CPU
 		{04803121-C02C-4899-8829-3EF15DE1C9B3}.Release|x86.Build.0 = Release|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Debug|x64.Build.0 = Debug|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Debug|x86.Build.0 = Debug|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Release|x64.ActiveCfg = Release|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Release|x64.Build.0 = Release|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Release|x86.ActiveCfg = Release|Any CPU
+		{CCF73978-C954-4543-B825-31A9BE91767D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
