@@ -70,8 +70,8 @@ public class Account
             throw new InsufficientFundsException();
         }
 
-        Balance -= amount; // Remove do disponível
-        ReservedBalance += amount; // Adiciona ao reservado
+        Balance -= amount;
+        ReservedBalance += amount;
     }
 
     public void Capture(long amount)
@@ -98,7 +98,7 @@ public class Account
         }
 
         ReservedBalance -= amount;
-        Balance += amount; // Devolve ao disponível
+        Balance += amount;
     }
 
     private void EnsureActive()

@@ -18,7 +18,7 @@ public class TransactionsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateTransaction([FromBody] CreateTransactionRequest request, CancellationToken ct)
     {
-        // Aqui dava para criar um middleware para tratar exceptions globais]
+        // Aqui dava para criar um middleware para tratar exceptions globais
 
         try
         {

@@ -6,6 +6,6 @@ public enum OperationTypeTransaction
     Debit,
     Reserve,
     Capture,
-    Reverse,
+    Reversal,
     Transfer
 }

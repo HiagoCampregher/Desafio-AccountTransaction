@@ -21,7 +21,6 @@ public class TransactionRepository : ITransactionRepository
 
     public async Task<bool> ExistsByReferenceIdAsync(string referenceId, CancellationToken cancellationToken = default)
     {
-        // Validação de Idempotência: Checa se já existe transação com este ID externo [cite: 67]
         return await _context.Transactions
             .AnyAsync(t => t.ReferenceId == referenceId, cancellationToken);
     }
