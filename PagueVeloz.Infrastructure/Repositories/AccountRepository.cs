@@ -40,8 +40,6 @@ public class AccountRepository : IAccountRepository
 
     public void Update(Account account)
     {
-        // O EF Core ChangeTracker geralmente lida com isso se a entidade foi carregada no mesmo escopo,
-        // mas forçar o Update garante que o estado Modified seja setado explicitamente.
         _context.Accounts.Update(account);
     }
 }

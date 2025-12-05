@@ -22,11 +22,11 @@ public class Account
     {
     }
 
-    public Account(string customerId, string accountNumber, long creditLimit)
+    public Account(string customerId, long creditLimit)
     {
         Id = Guid.NewGuid();
         CustomerId = customerId;
-        AccountNumber = accountNumber;
+        //AccountNumber = accountNumber;
         CreditLimit = creditLimit;
         Balance = 0;
         ReservedBalance = 0;
@@ -37,7 +37,8 @@ public class Account
     public void Credit(long amount)
     {
         EnsureActive();
-        if (amount <= 0) throw new InvalidOperationException("Valor de crédito deve ser positivo.");
+        if (amount <= 0)
+            throw new InvalidOperationException("Valor de crédito deve ser positivo.");
 
         Balance += amount;
     }
@@ -69,8 +70,8 @@ public class Account
             throw new InsufficientFundsException();
         }
 
-        Balance -= amount; // Remove do disponível
-        ReservedBalance += amount; // Adiciona ao reservado
+        Balance -= amount;
+        ReservedBalance += amount;
     }
 
     public void Capture(long amount)
@@ -97,7 +98,7 @@ public class Account
         }
 
         ReservedBalance -= amount;
-        Balance += amount; // Devolve ao disponível
+        Balance += amount;
     }
 
     private void EnsureActive()
